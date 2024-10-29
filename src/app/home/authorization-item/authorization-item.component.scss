@@ -1,0 +1,90 @@
+.card-footer {
+  padding: 16px;
+  margin-left: 60px;
+}
+
+.card {
+  margin: 12px 0;
+}
+.custom-card {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  font-size: 48px;
+  margin-right: 16px;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.title {
+  color: var(--neutral-900);
+  font-size: 16px;
+  font-family: Poppins;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 14px;
+  font-family: Inter;
+  color: var(--neutral-900);
+  margin: 0;
+  line-height: 24px;
+}
+
+.menu-button {
+  margin-left: auto;
+}
+.status {
+  background-color: #e0e0e0; /* Change this color as needed */
+  padding: 4px 12px;
+  border-radius: 12px;
+  margin-right: 16px;
+  font-size: 0.875rem;
+  color: #333; /* Adjust text color as needed */
+}
+
+.name {
+  background-color: var(--neutral-700) !important;
+  --mdc-chip-label-text-color: #fcfcfd;
+}
+
+.contract {
+  background-color: var(--neutral-100) !important;
+  --mdc-chip-label-text-color: #363f72;
+}
+
+.accepted {
+  background-color: green;
+  color: white;
+  font-weight: 300;
+}
+
+.pending {
+  background-color: orange;
+  color: white;
+  font-weight: 300;
+}
+
+.rejected {
+  background-color: red;
+  color: white;
+  font-weight: 300;
+}

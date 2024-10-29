@@ -1,0 +1,62 @@
+<div class="title">
+  @if(data){
+  <p mat-dialog-title>Modifier la demande d'autorisation</p>
+  } @else {
+  <p mat-dialog-title>Ajouter une demande d'autorisation</p>
+  }
+</div>
+<mat-dialog-content class="content">
+  <mat-form-field appearance="outline">
+    <mat-label>Projet de travaux</mat-label>
+    <input matInput placeholder="Projet de travaux *" [formControl]="title" />
+    @if (title.invalid) {
+    <mat-error>Champ requis</mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Utilisateur</mat-label>
+    <input matInput placeholder="Utilisateur *" [formControl]="user" />
+    @if (user.invalid) {
+    <mat-error>Champ requis</mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Contrat</mat-label>
+    <input matInput placeholder="Contrat *" [formControl]="contract" />
+    @if (contract.invalid) {
+    <mat-error>Champ requis</mat-error>
+    }
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions class="footer">
+  <button
+    mat-stroked-button
+    mat-dialog-close
+    class="close-button"
+    color="warning"
+  >
+    Annuler
+  </button>
+  @if(data){
+  <button
+    mat-flat-button
+    class="create-button"
+    color="success"
+    [disabled]="!enableAddButton()"
+    (click)="updateDemand()"
+  >
+    Modifier
+  </button>
+  } @else {
+  <button
+    mat-flat-button
+    class="create-button"
+    color="success"
+    [disabled]="!enableAddButton()"
+    (click)="addDemand()"
+  >
+    Créer
+  </button>
+  }
+</mat-dialog-actions>

@@ -1,0 +1,31 @@
+<div class="content">
+  <div class="header">
+    <mat-grid-list cols="12" rowHeight="30px">
+      <mat-grid-tile [colspan]="7" [rowspan]="1">
+        <p class="title">Liste des demandes</p>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="5" [rowspan]="2" (click)="addNewDemand()">
+        <div class="add-button">
+          <a mat-fab extended>
+            <mat-icon>add</mat-icon>
+            Ajouter
+          </a>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="7" [rowspan]="1">
+        <p class="subtitle">Gérer les demandes d'autorisation de travaux.</p>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+  @if(allDemands().length != 0) { @for (demand of allDemands(); track demand) {
+  <app-authorization-item
+    [demand]="demand"
+    (reload)="reloadAlldemands()"
+  ></app-authorization-item>
+  } } @else{
+  <div class="empty-list">
+    <p>Aucune demande en cours.</p>
+  </div>
+  }
+</div>

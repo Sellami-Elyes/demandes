@@ -1,0 +1,60 @@
+<mat-card appearance="outlined" class="card" (click)="updateDemand()">
+  <mat-card-content>
+    <div class="card-content">
+      <img src="./assets/Ellipse-31.svg" alt="icon" class="icon" />
+      <div class="text-content">
+        <p class="subtitle">Demande d'autorisation de travaux</p>
+        <p class="title">{{ demand?.title }}</p>
+      </div>
+      <div
+        class="status"
+        [ngClass]="{
+          accepted: demand?.status === StatusState.ACCEPTED,
+          pending: demand?.status === StatusState.PENDING,
+          rejected: demand?.status === StatusState.REJECTED
+        }"
+      >
+        {{ demand?.status }}
+      </div>
+      <button
+        mat-icon-button
+        class="menu-button"
+        [matMenuTriggerFor]="menu"
+        (click)="$event.stopPropagation()"
+      >
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </div>
+  </mat-card-content>
+
+  <mat-card-footer class="card-footer">
+    <mat-chip-set>
+      <mat-chip class="name">{{ demand?.user }}</mat-chip>
+      <mat-chip class="contract" selected
+        >Contract {{ demand?.contract }}</mat-chip
+      >
+    </mat-chip-set>
+  </mat-card-footer>
+</mat-card>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="updateDemandStatus(StatusState.ACCEPTED)">
+    <mat-icon>done</mat-icon>
+    <span>Accepter</span>
+  </button>
+
+  <button mat-menu-item (click)="updateDemandStatus(StatusState.REJECTED)">
+    <mat-icon>cancel</mat-icon>
+    <span>Refuser</span>
+  </button>
+
+  <button mat-menu-item (click)="updateDemand()">
+    <mat-icon>edit</mat-icon>
+    <span>Modifier</span>
+  </button>
+
+  <button mat-menu-item (click)="deleteDemand()">
+    <mat-icon>delete</mat-icon>
+    <span>Supprimer</span>
+  </button>
+</mat-menu>

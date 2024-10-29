@@ -1,0 +1,74 @@
+:host {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background: var(--neutral-50);
+  }
+  
+  .content {
+    width: 70%;
+    margin: auto;
+  }
+  
+  .header {
+    margin: 5% 0;
+    .title {
+      color: var(--neutral-900);
+      text-align: left;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 38px;
+      font-family: Poppins;
+      letter-spacing: 0px;
+      width: 100%;
+    }
+  
+    .subtitle {
+      color: var(--neutral-600);
+      text-align: left;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: medium;
+      font-size: 14px;
+      line-height: 38px;
+      font-family: Inter;
+      letter-spacing: 0px;
+      width: 100%;
+    }
+  }
+  
+  ::ng-deep .mat-grid-tile .mat-grid-tile-content {
+    justify-content: flex-start !important;
+    align-items: center;
+    padding: 0 16px !important;
+  }
+  
+  .left-content {
+    display: flex;
+    align-content: left;
+  }
+  
+  .add-button {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  
+    a[mat-fab] {
+      background: var(--primary-600);
+      color: white;
+      border-radius: 10px;
+    }
+  }
+
+  .empty-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+  
